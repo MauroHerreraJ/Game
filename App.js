@@ -3,8 +3,19 @@ import StarGameScreen from './screens/StartGameScreen';
 
 export default function App() {
 
-return  <StarGameScreen/>
+return( 
+   <View style={styles.rootScreen}>
+     <StarGameScreen/>
+   </View>
+);
+
   
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    rootScreen:{
+        flex:1,
+        backgroundColor:"#ddb52f",
+
+    }
+});
