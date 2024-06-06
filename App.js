@@ -1,12 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,ImageBackground } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import StarGameScreen from './screens/StartGameScreen';
 
 export default function App() {
 
 return( 
-   <View style={styles.rootScreen}>
-     <StarGameScreen/>
-   </View>
+   <LinearGradient colors={["#4e0329","#ddb52f"]} style={styles.rootScreen}>
+      <ImageBackground 
+      source={require("./assets/images/background.png")} 
+      resizeMode='cover' 
+      style={styles.rootScreen} 
+      imageStyle={styles.backgroundImage}>
+       <StarGameScreen/>
+      </ImageBackground>
+   </LinearGradient>
 );
 
   
@@ -15,7 +22,11 @@ return(
 const styles = StyleSheet.create({
     rootScreen:{
         flex:1,
-        backgroundColor:"#ddb52f",
+
+    },
+    backgroundImage:{
+      opacity:0.15
+
 
     }
 });

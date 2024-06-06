@@ -1,18 +1,31 @@
+import { useState } from "react";
 import{TextInput,View,StyleSheet} from "react-native"
 import PrimaryButton from "../components/PrimaryButton";
 
 function StarGameScreen () {
+   const [enteredNumber, setEnteredNumber] = useState("");
+
+   function numberImputHandler(enteredText){
+    setEnteredNumber(enteredText)
+   }
+
+   function confirmImputHandler(){
+
+   }
+   
     return (
     <View style={styles.inputcontainer}>
         <TextInput 
+        onChangeText={numberImputHandler}
         style={styles.numberImput} 
         maxLength={2} keyboardType="number-pad" 
         autoCapitalize="none" 
         autoCorrect={false}
+        value={enteredNumber}
         />
             <View style={styles.buttonsContainer}>
                 <View style={styles.buttonContainer}>
-                 <PrimaryButton>Reset</PrimaryButton>
+                 <PrimaryButton onPress={confirmImputHandler}>Reset</PrimaryButton>
                 </View>
                 <View  style={styles.buttonContainer}>
                  <PrimaryButton>Confirm</PrimaryButton>
