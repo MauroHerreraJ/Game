@@ -2,7 +2,7 @@ import{View,Text,Pressable,StyleSheet} from "react-native"
 
 function PrimaryButton({children, onPress}){
    
-    
+      
     return(
       <View style={styles.buttonOuterContainer}>
         <Pressable 

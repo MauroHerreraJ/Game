@@ -2,14 +2,14 @@ import { useState } from "react";
 import{TextInput,View,StyleSheet,Alert} from "react-native"
 import PrimaryButton from "../components/PrimaryButton";
 
-function StarGameScreen () {
-   const [enteredNumber, setEnteredNumber] = useState("");
+function StarGameScreen (onPickNumber) {
+   const [enteredNumber, setEnteredNumber] = useState();
 
    function numberImputHandler(enteredText){
     setEnteredNumber(enteredText)
    }
 
-   function resetImputHandler(){
+   function resetImputHandler(){ 
     setEnteredNumber("");
 
    }
@@ -25,7 +25,7 @@ function StarGameScreen () {
         );
         return;
       }
-        console.log("valid number");
+        onPickNumber(chosenNumber);
 
    }
    
