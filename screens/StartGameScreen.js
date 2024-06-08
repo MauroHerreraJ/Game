@@ -3,11 +3,11 @@ import{TextInput,View,StyleSheet,Alert} from "react-native"
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../constans/colors";
 
-function StarGameScreen (onPickNumber) {
-   const [enteredNumber, setEnteredNumber] = useState();
+function StartGameScreen ({onPickNumber}) {
+   const [enteredNumber, setEnteredNumber] = useState("");
 
    function numberImputHandler(enteredText){
-    setEnteredNumber(enteredText)
+    setEnteredNumber(enteredText) 
    }
 
    function resetImputHandler(){ 
@@ -26,18 +26,18 @@ function StarGameScreen (onPickNumber) {
         );
         return;
       }
-        onPickNumber(chosenNumber);
+      onPickNumber(chosenNumber);
 
    }
    
     return (
     <View style={styles.inputcontainer}>
         <TextInput 
-        onChangeText={numberImputHandler}
         style={styles.numberImput} 
         maxLength={2} keyboardType="number-pad" 
         autoCapitalize="none" 
         autoCorrect={false}
+        onChangeText={numberImputHandler}
         value={enteredNumber}
         />
             <View style={styles.buttonsContainer}>
@@ -53,7 +53,7 @@ function StarGameScreen (onPickNumber) {
         
 }
 
-export default StarGameScreen;
+export default StartGameScreen;
 
 const styles= StyleSheet.create({
     inputcontainer:{
